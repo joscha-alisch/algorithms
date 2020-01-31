@@ -12,7 +12,7 @@ git checkout -b "$(date +%Y-%m-%dT%H-%M)-$PROJECT-$LANGUAGE"
 
 case "$LANGUAGE" in
   kotlin)
-    rm -rf "$(find ./src  -type d -name selectionsort)"
+    rm -rf "${$(find ./src  -type d -name selectionsort):?}/*"
     ;;
 esac
 
