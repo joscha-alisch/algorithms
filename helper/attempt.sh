@@ -16,6 +16,7 @@ case "$LANGUAGE" in
     ;;
 esac
 
+echo "${SOURCE_CODE_DIRECTORY:?}/*"
 rm -rf "${SOURCE_CODE_DIRECTORY:?}/*"
 
 git commit -a -m "Remove previous solution"
