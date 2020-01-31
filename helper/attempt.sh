@@ -13,10 +13,8 @@ git checkout -b "$(date +%Y-%m-%dT%H-%M)-$PROJECT-$LANGUAGE"
 case "$LANGUAGE" in
   kotlin)
     SOURCE_CODE_DIRECTORY=$(find ./src  -type d -name selectionsort)
+    rm -rf "${SOURCE_CODE_DIRECTORY:?}/"*
     ;;
 esac
-
-echo "${SOURCE_CODE_DIRECTORY:?}/*"
-rm -rf "${SOURCE_CODE_DIRECTORY:?}/*"
 
 git commit -a -m "Remove previous solution"
