@@ -5,12 +5,16 @@ fun <T: Comparable<T>> sort(array: Array<T>): Array<T> {
     (array.indices).forEach { index ->
         var j = index
         while (j > 0  && array[j] < array[j-1] ) {
-            val temp = array[j-1]
-            array[j-1] = array[j]
-            array[j] = temp
+            array.swap(j, j-1)
             j--
         }
     }
 
     return array
+}
+
+private fun <T: Comparable<T>> Array<T>.swap(first: Int, with: Int) {
+    val temp = this[first]
+    this[first] = this[with]
+    this[with] = temp
 }
