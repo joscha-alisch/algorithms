@@ -12,7 +12,7 @@ git checkout -b "$(date +%Y-%m-%dT%H-%M)-$PROJECT-$LANGUAGE"
 
 case "$LANGUAGE" in
   kotlin)
-    SOURCE_CODE_DIRECTORY=$(find ./src  -type d -name selectionsort)
+    SOURCE_CODE_DIRECTORY=$(find ./src  -type d -name "$PROJECT")
     rm -rf "${SOURCE_CODE_DIRECTORY:?}/"*
     ;;
 esac
